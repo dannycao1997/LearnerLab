@@ -5,11 +5,20 @@ import org.junit.Test;
 
 public class TestPerson {
 
-    private Person person;
-
     @Test
     public void testConstructor(){
-        Person person = new Person(10, "Danny");
+        // given
+        String expectedName = "";
+        long expectedId = Integer.MAX_VALUE;
+        Person person = new Person(expectedId, expectedName);
+
+        // when
+        String actualName = person.getName();
+        long actualId = person.getId();
+
+        Assert.assertEquals(expectedName,actualName);
+        Assert.assertEquals(expectedId, actualId);
+
     }
 
     @Test
