@@ -16,6 +16,7 @@ public class TestPerson {
         String actualName = person.getName();
         long actualId = person.getId();
 
+        // then
         Assert.assertEquals(expectedName,actualName);
         Assert.assertEquals(expectedId, actualId);
 
@@ -23,9 +24,18 @@ public class TestPerson {
 
     @Test
     public void testSetName(){
-        Person person = new Person(10, "Danny");
-        person.setName("Beatriz");
-        Assert.assertEquals("Beatriz", person.getName());
+        // given
+        String expectedName = "Beatriz";
+        long expectedId = Integer.MAX_VALUE;
+        Person person = new Person(expectedId, expectedName);
+
+        // when
+        String actualName = person.getName();
+        long actualId = person.getId();
+
+        // then
+        Assert.assertEquals(expectedName, actualName);
+        Assert.assertEquals(expectedId, actualId);
     }
 
 }
